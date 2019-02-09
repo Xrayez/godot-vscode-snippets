@@ -183,7 +183,25 @@
 		  "}"
 		],
 		"description": "Godot C++ Define set/get member methods for const Reference"
-	  },
+		},
+
+		// Assertions
+		"Godot C++ Error Fail Condition Explained": {
+			"prefix": "godot-err-fail-cond-explain",
+			"body": [
+				"ERR_EXPLAIN(\"${1:message}\");",
+				"ERR_FAIL_COND(${2:condition});"
+			],
+			"description": "Godot C++ Error Fail Condition Explained"
+		},
+		"Godot C++ Error Fail Condition With Return Value Explained": {
+			"prefix": "godot-err-fail-cond-v-explain",
+			"body": [
+				"ERR_EXPLAIN(\"${1:message}\");",
+				"ERR_FAIL_COND_V(${2:condition}, ${3|NULL,int,float,double|});"
+			],
+			"description": "Godot C++ Error Fail Condition With Return Value Explained"
+		},
 
 	  // Misc
 
