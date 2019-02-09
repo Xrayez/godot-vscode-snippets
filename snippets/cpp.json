@@ -40,7 +40,7 @@
 	  "Godot C++ Add Property": {
 		"prefix": "godot-add-property",
 		"body": [
-		  "ADD_PROPERTY(PropertyInfo(Variant::${1|NIL,BOOL,INT,REAL,STRING,VECTOR2,RECT2,VECTOR3,TRANSFORM2D,PLANE,QUAT,AABB,BASIS,TRANSFORM,COLOR,NODE_PATH,_RID,OBJECT,DICTIONARY,ARRAY,POOL_BYTE_ARRAY,POOL_INT_ARRAY,POOL_REAL_ARRAY,POOL_STRING_ARRAY,POOL_VECTOR2_ARRAY,POOL_VECTOR3_ARRAY,POOL_COLOR_ARRAY|}, \"${2:name}\",), \"set_${2:name}\", \"${3:get}_${2:name}\");"
+		  "ADD_PROPERTY(PropertyInfo(Variant::${1|NIL,BOOL,INT,REAL,STRING,VECTOR2,RECT2,VECTOR3,TRANSFORM2D,PLANE,QUAT,AABB,BASIS,TRANSFORM,COLOR,NODE_PATH,_RID,OBJECT,DICTIONARY,ARRAY,POOL_BYTE_ARRAY,POOL_INT_ARRAY,POOL_REAL_ARRAY,POOL_STRING_ARRAY,POOL_VECTOR2_ARRAY,POOL_VECTOR3_ARRAY,POOL_COLOR_ARRAY|}, \"${2:name}\"), \"set_${2:name}\", \"${3:get}_${2:name}\");"
 		],
 		"description": "Godot C++ Add Property"
 	  },
@@ -108,8 +108,8 @@
 	  "Godot C++ Declare set/get member methods for Reference": {
 		"prefix": "godot-declare-setget-ref",
 		"body": [
-		  "void set_${1:name}(${2:Ref<class>} p_${1:name});",
-		  "Ref<${2:class>} ${3:get}_${1:name}() const;"
+		  "void set_${1:name}(Ref<${2:class}> p_${1:name});",
+		  "Ref<${2:class}> ${3:get}_${1:name}() const;"
 		],
 		"description": "Godot C++ Declare set/get member methods for Reference"
 	  },
