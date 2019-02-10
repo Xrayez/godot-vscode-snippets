@@ -186,21 +186,38 @@
 		},
 
 		// Assertions
-		"Godot C++ Error Fail Condition Explained": {
-			"prefix": "godot-err-fail-cond-explain",
+
+		"Godot C++ Error Fail Condition": {
+			"prefix": "godot-err-fail-cond",
 			"body": [
 				"ERR_EXPLAIN(\"${1:message}\");",
 				"ERR_FAIL_COND(${2:condition});"
 			],
-			"description": "Godot C++ Error Fail Condition Explained"
+			"description": "Godot C++ Error Fail Condition"
 		},
-		"Godot C++ Error Fail Condition With Return Value Explained": {
-			"prefix": "godot-err-fail-cond-v-explain",
+		"Godot C++ Error Fail Condition With Return Value": {
+			"prefix": "godot-err-fail-cond-v",
 			"body": [
 				"ERR_EXPLAIN(\"${1:message}\");",
 				"ERR_FAIL_COND_V(${2:condition}, ${3|NULL,int,float,double|});"
 			],
-			"description": "Godot C++ Error Fail Condition With Return Value Explained"
+			"description": "Godot C++ Error Fail Condition With Return Value"
+		},
+		"Godot C++ Error Fail Index": {
+			"prefix": "godot-err-fail-index",
+			"body": [
+				"ERR_EXPLAIN(\"${1:message}\");",
+				"ERR_FAIL_INDEX(${2:index}, ${3:size});"
+			],
+			"description": "Godot C++ Error Fail Index"
+		},
+		"Godot C++ Error Fail Index With Return Value": {
+			"prefix": "godot-err-fail-index-v",
+			"body": [
+				"ERR_EXPLAIN(\"${1:message}\");",
+				"ERR_FAIL_INDEX_V(${2:index}, ${3:size}, ${4|NULL,int,float,double|});"
+			],
+			"description": "Godot C++ Error Fail Index With Return Value"
 		},
 
 	  // Misc
