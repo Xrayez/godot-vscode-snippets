@@ -1,6 +1,6 @@
 {
-	"name": "godot-cpp-snippets",
-	"displayName": "Godot C++ Development snippets",
+	"name": "godot-snippets",
+	"displayName": "Godot Development snippets",
 	"description": "Snippets for Godot class, set/get methods, bindings and other common code",
 	"version": "0.0.1",
 	"publisher": "Xrayez",

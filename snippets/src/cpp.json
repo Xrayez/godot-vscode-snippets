@@ -1,12 +1,12 @@
 {
 	/* List of Variant types:
 
-		NIL,BOOL,INT,REAL,STRING,VECTOR2,RECT2,VECTOR3,TRANSFORM2D,PLANE,QUAT,AABB,BASIS,TRANSFORM,COLOR,NODE_PATH,_RID,OBJECT,DICTIONARY,ARRAY,POOL_BYTE_ARRAY,POOL_INT_ARRAY,POOL_REAL_ARRAY,POOL_STRING_ARRAY,POOL_VECTOR2_ARRAY,POOL_VECTOR3_ARRAY,POOL_COLOR_ARRAY
+		PLACEHOLDER_VARIANT_TYPES
 	*/
 
 	/* Class regex substitution from filename:
 
-		${TM_FILENAME_BASE/([A-Za-z0-9]*)_+([A-Za-z0-9]*)/${1:/capitalize}${2:/capitalize}/g}
+		${PLACEHOLDER_CLASS}
 
 		Based on: https://stackoverflow.com/questions/48104851/snippet-regex-match-arbitrary-number-of-groups-and-transform-to-camelcase
 	*/
@@ -16,7 +16,7 @@
 	  "Godot Define `_bind_methods()`": {
 		"prefix": "godot-define-bind-methods",
 		"body": [
-		  "void ${2:${TM_FILENAME_BASE/([A-Za-z0-9]*)_+([A-Za-z0-9]*)/${1:/capitalize}${2:/capitalize}/g}}::_bind_methods() {",
+		  "void ${2:${PLACEHOLDER_CLASS}}::_bind_methods() {",
 		  "\t$0",
 		  "}"
 		],
@@ -25,29 +25,29 @@
 	  "Godot Define ClassDB bind method": {
 		"prefix": "godot-bind-method",
 		"body": [
-		  "ClassDB::bind_method(D_METHOD(\"${1:name}\"), &${2:${TM_FILENAME_BASE/([A-Za-z0-9]*)_+([A-Za-z0-9]*)/${1:/capitalize}${2:/capitalize}/g}}::${1:name});",
+		  "ClassDB::bind_method(D_METHOD(\"${1:name}\"), &${2:${PLACEHOLDER_CLASS}}::${1:name});",
 		],
 		"description": "Godot Define ClassDB bind method"
 	  },
 	  "Godot Define ClassDB set/get bind methods": {
 		"prefix": "godot-setget-bind-method",
 		"body": [
-		  "ClassDB::bind_method(D_METHOD(\"set_${1:name}\", \"${1:name}\"), &${2:${TM_FILENAME_BASE/([A-Za-z0-9]*)_+([A-Za-z0-9]*)/${1:/capitalize}${2:/capitalize}/g}}::set_${1:name});",
-		  "ClassDB::bind_method(D_METHOD(\"${3:get}_${1:name}\"), &${2:${TM_FILENAME_BASE/([A-Za-z0-9]*)_+([A-Za-z0-9]*)/${1:/capitalize}${2:/capitalize}/g}}::${3:get}_${1:name});"
+		  "ClassDB::bind_method(D_METHOD(\"set_${1:name}\", \"${1:name}\"), &${2:${PLACEHOLDER_CLASS}}::set_${1:name});",
+		  "ClassDB::bind_method(D_METHOD(\"${3:get}_${1:name}\"), &${2:${PLACEHOLDER_CLASS}}::${3:get}_${1:name});"
 		],
 		"description": "Godot Define ClassDB set/get bind methods"
 	  },
 	  "Godot Add Property": {
 		"prefix": "godot-add-property",
 		"body": [
-		  "ADD_PROPERTY(PropertyInfo(Variant::${1|NIL,BOOL,INT,REAL,STRING,VECTOR2,RECT2,VECTOR3,TRANSFORM2D,PLANE,QUAT,AABB,BASIS,TRANSFORM,COLOR,NODE_PATH,_RID,OBJECT,DICTIONARY,ARRAY,POOL_BYTE_ARRAY,POOL_INT_ARRAY,POOL_REAL_ARRAY,POOL_STRING_ARRAY,POOL_VECTOR2_ARRAY,POOL_VECTOR3_ARRAY,POOL_COLOR_ARRAY|}, \"${2:name}\"), \"set_${2:name}\", \"${3:get}_${2:name}\");"
+		  "ADD_PROPERTY(PropertyInfo(Variant::${1|PLACEHOLDER_VARIANT_TYPES|}, \"${2:name}\"), \"set_${2:name}\", \"${3:get}_${2:name}\");"
 		],
 		"description": "Godot Add Property"
 	  },
 	  "Godot Add Signal": {
 		"prefix": "godot-add-signal",
 		"body": [
-		  "ADD_SIGNAL(MethodInfo(\"${1:name}\", PropertyInfo(Variant::${2|NIL,BOOL,INT,REAL,STRING,VECTOR2,RECT2,VECTOR3,TRANSFORM2D,PLANE,QUAT,AABB,BASIS,TRANSFORM,COLOR,NODE_PATH,_RID,OBJECT,DICTIONARY,ARRAY,POOL_BYTE_ARRAY,POOL_INT_ARRAY,POOL_REAL_ARRAY,POOL_STRING_ARRAY,POOL_VECTOR2_ARRAY,POOL_VECTOR3_ARRAY,POOL_COLOR_ARRAY|}, \"${3:arg_name}\")));"
+		  "ADD_SIGNAL(MethodInfo(\"${1:name}\", PropertyInfo(Variant::${2|PLACEHOLDER_VARIANT_TYPES|}, \"${3:arg_name}\")));"
 		],
 		"description": "Godot Add Signal"
 	  },
@@ -73,7 +73,7 @@
 	  "Godot Declare Class": {
 		"prefix": "godot-class",
 		"body": [
-		  "class ${1:${TM_FILENAME_BASE/([A-Za-z0-9]*)_+([A-Za-z0-9]*)/${1:/capitalize}${2:/capitalize}/g}} : public ${2:extends} {",
+		  "class ${1:${PLACEHOLDER_CLASS}} : public ${2:extends} {",
 		  "\tGDLASS(${1:name}, ${2:extends});",
 		  "",
 		  "private:",
@@ -127,12 +127,12 @@
 	  "Godot Define set/get member methods": {
 		"prefix": "godot-setget-define",
 		"body": [
-		  "void ${1:${TM_FILENAME_BASE/([A-Za-z0-9]*)_+([A-Za-z0-9]*)/${1:/capitalize}${2:/capitalize}/g}}::set_${2:member}(${3:int} p_${2:member}) {",
+		  "void ${1:${PLACEHOLDER_CLASS}}::set_${2:member}(${3:int} p_${2:member}) {",
 		  "",
 		  "\t${2:member} = p_${2:member};",
 		  "}",
 		  "",
-		  "${3:int} ${1:${TM_FILENAME_BASE/([A-Za-z0-9]*)_+([A-Za-z0-9]*)/${1:/capitalize}${2:/capitalize}/g}}::${4:get}_${2:member}() const {",
+		  "${3:int} ${1:${PLACEHOLDER_CLASS}}::${4:get}_${2:member}() const {",
 		  "",
 		  "\treturn ${2:member};",
 		  "}"
@@ -142,12 +142,12 @@
 	  "Godot Define set/get member methods for Node": {
 		"prefix": "godot-setget-node-define",
 		"body": [
-		  "void ${1:${TM_FILENAME_BASE/([A-Za-z0-9]*)_+([A-Za-z0-9]*)/${1:/capitalize}${2:/capitalize}/g}}::set_${2:name}(${3:Node} *p_${2:node}) {",
+		  "void ${1:${PLACEHOLDER_CLASS}}::set_${2:name}(${3:Node} *p_${2:node}) {",
 		  "",
 		  "\t${2:node} = p_${2:node};",
 		  "}",
 		  "",
-		  "${3:Node} *${1:${TM_FILENAME_BASE/([A-Za-z0-9]*)_+([A-Za-z0-9]*)/${1:/capitalize}${2:/capitalize}/g}}::get_${2:node}() const {",
+		  "${3:Node} *${1:${PLACEHOLDER_CLASS}}::get_${2:node}() const {",
 		  "",
 		  "\treturn ${2:node};",
 		  "}"
@@ -157,12 +157,12 @@
 	  "Godot Define set/get member methods for Reference": {
 		"prefix": "godot-setget-ref-define",
 		"body": [
-		  "void ${1:${TM_FILENAME_BASE/([A-Za-z0-9]*)_+([A-Za-z0-9]*)/${1:/capitalize}${2:/capitalize}/g}}::set_${2:member}(Ref<${3:class}> p_${2:member}) {",
+		  "void ${1:${PLACEHOLDER_CLASS}}::set_${2:member}(Ref<${3:class}> p_${2:member}) {",
 		  "",
 		  "\t${2:member} = p_${2:member};",
 		  "}",
 		  "",
-		  "Ref<${3:class}> ${1:${TM_FILENAME_BASE/([A-Za-z0-9]*)_+([A-Za-z0-9]*)/${1:/capitalize}${2:/capitalize}/g}}::get_${2:member}() const {",
+		  "Ref<${3:class}> ${1:${PLACEHOLDER_CLASS}}::get_${2:member}() const {",
 		  "",
 		  "\treturn ${2:member};",
 		  "}"
@@ -172,12 +172,12 @@
 	  "Godot Define set/get member methods for const Reference": {
 		"prefix": "godot-setget-const-ref-define",
 		"body": [
-		  "void ${1:${TM_FILENAME_BASE/([A-Za-z0-9]*)_+([A-Za-z0-9]*)/${1:/capitalize}${2:/capitalize}/g}}::set_${2:member}(const Ref<${3:class}> &p_${2:member}) {",
+		  "void ${1:${PLACEHOLDER_CLASS}}::set_${2:member}(const Ref<${3:class}> &p_${2:member}) {",
 		  "",
 		  "\t${2:member} = p_${2:member};",
 		  "}",
 		  "",
-		  "Ref<${3:class}> ${1:${TM_FILENAME_BASE/([A-Za-z0-9]*)_+([A-Za-z0-9]*)/${1:/capitalize}${2:/capitalize}/g}}::get_${2:member}() const {",
+		  "Ref<${3:class}> ${1:${PLACEHOLDER_CLASS}}::get_${2:member}() const {",
 		  "",
 		  "\treturn ${2:member};",
 		  "}"
@@ -225,7 +225,7 @@
 	  "Godot Object Cast": {
 		"prefix": "godot-cast",
 		"body": [
-		  "Object::cast_to<${1:${TM_FILENAME_BASE/([A-Za-z0-9]*)_+([A-Za-z0-9]*)/${1:/capitalize}${2:/capitalize}/g}}>(${2:object});"
+		  "Object::cast_to<${1:${PLACEHOLDER_CLASS}}>(${2:object});"
 		],
 		"description": "Godot style casting"
 	  },
@@ -233,7 +233,7 @@
 	  "Godot Variant Enum Cast": {
 		"prefix": "godot-variant-enum-cast",
 		"body": [
-		  "VARIANT_ENUM_CAST(${1:${TM_FILENAME_BASE/([A-Za-z0-9]*)_+([A-Za-z0-9]*)/${1:/capitalize}${2:/capitalize}/g}}::${2:enum});"
+		  "VARIANT_ENUM_CAST(${1:${PLACEHOLDER_CLASS}}::${2:enum});"
 		],
 		"description": "Casts an enum for Variant"
 	  }
