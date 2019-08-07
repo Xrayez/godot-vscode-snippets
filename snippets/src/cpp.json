@@ -236,5 +236,17 @@
 		  "VARIANT_ENUM_CAST(${1:${PLACEHOLDER_CLASS}}::${2:enum});"
 		],
 		"description": "Casts an enum for Variant"
+	  },
+	  
+	  // Core types
+	  
+	  "Godot Map For Loop": {
+		"prefix": "godot-map-for",
+		"body": [
+			"for (Map<${1:key}, ${2:value}>::Element *E = ${3:map}.front(); E; E = E->next()) {",
+			"\t$0",
+			"}"
+		],
+		"description": "Inserts a loop to traverse map elements"
 	  }
 }
