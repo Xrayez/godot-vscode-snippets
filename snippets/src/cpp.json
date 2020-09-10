@@ -74,7 +74,7 @@
 		"prefix": "godot-class",
 		"body": [
 		  "class ${1:${PLACEHOLDER_CLASS}} : public ${2:extends} {",
-		  "\tGDLASS(${1:name}, ${2:extends});",
+		  "\tGDCLASS(${1:name}, ${2:extends});",
 		  "",
 		  "private:",
 		  "\t$0",
